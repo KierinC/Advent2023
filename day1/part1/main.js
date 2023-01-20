@@ -22,7 +22,8 @@ for(i in array) {
 // console.log(array);
 console.log(calories);
 calories.sort(compareNumbers);
-console.log(calories[calories.length - 1] + calories[calories.length - 2] + calories[calories.length - 3]);
+console.log('Part 1: ' + calories[calories.length - 1]);
+console.log('Part 2: ' + (calories[calories.length - 1] + calories[calories.length - 2] + calories[calories.length - 3]));
 // Get sum of groupings of numbers and add them to 'calories' array
 // Sort array to get highest sum first
 // Print calories[0]
