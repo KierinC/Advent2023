@@ -14,18 +14,37 @@ const ltrPriority = (letter) => {
 for (i in array) {
   array[i] = array[i].replace('\r','')
   console.log(array[i])
+
+  let firstHalf = array[i].substring(0, array[i].length / 2)
+  let secondHalf = array[i].substring(array[i].length / 2)
+
   usedLetter = ''
-  for (j = 0; j < (array[i].length / 2) - 1; j++) {
-    for (l = (array[i].length / 2); l < array[i].length; l++) {
-      if (array[i][j] === array[i][l] && !usedLetter.includes(array[i][j])) {
-        sum += ltrPriority(array[i][j])
-        console.log('First letter:', array[i][j], 'Second letter:', array[i][l])
-        console.log('Sum:', sum)
-        usedLetter += array[i][j]
-      }
+
+  for (j in firstHalf) {
+    if (secondHalf.includes(firstHalf[j]) && !usedLetter.includes(firstHalf[j])) {
+      sum += ltrPriority(array[i][j])
+      // console.log('First letter:', array[i][j], 'Second letter:', array[i][l])
+      console.log('Sum:', sum)
+      usedLetter += firstHalf[j]
     }
   }
 }
+
+// for (i in array) {
+//   array[i] = array[i].replace('\r','')
+//   console.log(array[i])
+//   usedLetter = ''
+//   for (j = 0; j < (array[i].length / 2) - 1; j++) {
+//     for (l = (array[i].length / 2); l < array[i].length; l++) {
+//       if (array[i][j] === array[i][l] && !usedLetter.includes(array[i][j])) {
+//         sum += ltrPriority(array[i][j])
+//         console.log('First letter:', array[i][j], 'Second letter:', array[i][l])
+//         console.log('Sum:', sum)
+//         usedLetter += array[i][j]
+//       }
+//     }
+//   }
+// }
 
 // for (i in letters) {
 //   console.log(letters[i], ': ', ltrPriority(letters[i]))
